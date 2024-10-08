@@ -13,7 +13,11 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
-  const { last } = useData()
+  const { data } = useData()
+  // On classe les évènements par date pour récupérer la dernière prestation
+  const last = data?.events.sort((evtA, evtB) =>
+    new Date(evtB.date) - new Date(evtA.date)
+  )[0];
   return <>
     <header>
       <Menu />
@@ -116,13 +120,21 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        <EventCard
-          imageSrc={last?.cover}
-          title={last?.title}
-          date={new Date(last?.date)}
-          small
-          label="boom"
-        />
+        {/* On ajoute "last" pour supprimer les erreurs "undefined" de la console 
+            => Avec l'opérateur "&&", on restitue conditionnellement le composant
+        */}
+        {last && (
+          <EventCard
+            imageSrc={last?.cover}
+            title={last?.title}
+            date={new Date(last?.date)}
+            small
+            // ajout de la prop des données
+            label={last?.type}
+            // ajout d'attribut test dans le rendu du composant 
+            data-testid="lastEvent"
+          />
+        )}
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
