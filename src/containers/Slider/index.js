@@ -9,7 +9,7 @@ const Slider = () => {
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
     // ancien code => new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
     // Correction pour afficher du plus ancien au plus récent
-    new Date(evtA.date) < new Date(evtB.date) ? - 1 : 1
+    new Date(evtA.date) > new Date(evtB.date) ? 1 : -1
   );
   // ancien code
   // const nextCard = () => {
