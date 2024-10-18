@@ -30,6 +30,7 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
+      {/* ajout d'ancre */}
       <section id="nos-services" className="ServicesContainer">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
@@ -59,10 +60,12 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
+      {/* ajout d'ancre */}
       <section id="nos-realisations" className="EventsContainer">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
+      {/* ajout d'ancre */}
       <section id="notre-equipe" className="PeoplesContainer">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
@@ -99,6 +102,7 @@ const Page = () => {
           />
         </div>
       </section>
+      {/* ajout d'ancre */}
       <div className="FormContainer" id="contact">
         <h2 className="Title">Contact</h2>
         <Modal
