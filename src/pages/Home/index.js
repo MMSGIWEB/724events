@@ -13,11 +13,15 @@ import Modal from "../../containers/Modal";
 import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
+  // ancien : const { last } = useData()
+  // récup des données
   const { data } = useData()
-  // On classe les évènements par date pour récupérer la dernière prestation
+  // stockage de l'événement le plus récent (le dernier événement) à partir des données récupérées
   const last = data?.events.sort((evtA, evtB) =>
+    // on trie par ordre décroissant
     new Date(evtB.date) - new Date(evtA.date)
-  )[0];
+    // on récup le 1er "[0]" vu qu'il est trié par ordre décroissant (evt le + récent)
+  )[0]
   return <>
     <header>
       <Menu />
@@ -26,7 +30,7 @@ const Page = () => {
       <section className="SliderContainer">
         <Slider />
       </section>
-      <section id="nos-services" className="ServicesContainer">
+      <section className="ServicesContainer">
         <h2 className="Title">Nos services</h2>
         <p>Nous organisons des événements sur mesure partout dans le monde</p>
         <div className="ListContainer">
@@ -55,11 +59,11 @@ const Page = () => {
           </ServiceCard>
         </div>
       </section>
-      <section id="nos-realisations" className="EventsContainer">
+      <section className="EventsContainer">
         <h2 className="Title">Nos réalisations</h2>
         <EventList />
       </section>
-      <section id="notre-equipe" className="PeoplesContainer">
+      <section className="PeoplesContainer">
         <h2 className="Title">Notre équipe</h2>
         <p>Une équipe d’experts dédiés à l’ogranisation de vos événements</p>
         <div className="ListContainer">
@@ -120,8 +124,9 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        {/* On ajoute "last" pour supprimer les erreurs "undefined" de la console 
-            => Avec l'opérateur "&&", on restitue conditionnellement le composant
+        {/* On ajoute "last" pour supprimer les erreurs "undefined" pour les sources de l'img + title + label de la console 
+            + avec l'opérateur "&&" pour vérifier si last existe et si c'est le cas
+            => on restitue conditionnellement le composant
         */}
         {last && (
           <EventCard
@@ -129,12 +134,12 @@ const Page = () => {
             title={last?.title}
             date={new Date(last?.date)}
             small
-            // ajout de la prop des données
+            // ancien : label="boom"
+            // correction en ajoutant la propriété concernée (type)
             label={last?.type}
-            // ajout d'attribut test dans le rendu du composant 
-            data-testid="lastEvent"
           />
         )}
+
       </div>
       <div className="col contact">
         <h3>Contactez-nous</h3>
