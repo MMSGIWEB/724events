@@ -14,10 +14,11 @@ const EventList = () => {
   const [type, setType] = useState();
   const [currentPage, setCurrentPage] = useState(1);
   const filteredEvents = (
-    // si le type est bien défini on affiche tous les évènements sinon [solution] on filtre par type
+    // ici, si le type est bien défini on affiche tous les évènements sinon [la solution] on filtre par type
     (!type
       ? data?.events
-      //  CORRECTION : Ajout de ".filter" dans la 2ème alternative pour filtrer les évènements par catégories
+      // : data?.events) || []
+      // méthode '.filter' manquante donc on l'ajoute dans la 2ème alternative pour filtrer les évènements par catégories
       : data?.events.filter(event => event.type === type)) || []
   ).filter((event, index) => {
     if (
