@@ -58,7 +58,7 @@ const Slider = () => {
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
-              // checked={idx === radioIdx} correction idx => index q correspond celui de useState(0)
+              // checked={idx === radioIdx} correction idx => index q correspond celui de useState(0) L9
               // => indique sur quelle img on se trouver
               readOnly
             // "console error : Warning: You provided a `checked` prop to a form field without an `onChange` handler."
