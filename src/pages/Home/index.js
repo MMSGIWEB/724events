@@ -14,7 +14,7 @@ import { useData } from "../../contexts/DataContext";
 
 const Page = () => {
   // ancien : const { last } = useData()
-  // récup des données
+  // récup des données avec le hook personnalisé
   const { data } = useData()
   // stockage de l'événement le plus récent (le dernier événement) à partir des données récupérées
   const last = data?.events.sort((evtA, evtB) =>
