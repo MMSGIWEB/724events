@@ -14,7 +14,7 @@ const Slider = () => {
     new Date(evtA.date) > new Date(evtB.date) ? 1 : -1
   );
   // ajout de const avec la longueur du tb (inspiré de la méthode ligne 10)
-  // une fois arrivé au last slide et repasse à la première sans avoir de slide vide/blanc
+  // une fois arrivé au dernier on repasse à la première (pas d'img blanche)
   const dataLength = data?.focus.length
   const nextCard = () => {
     setTimeout(
@@ -53,12 +53,13 @@ const Slider = () => {
             <input
               // ajout de '_' pour correspondre au 1er param
               // ancien : key={`${event.id}`} -- les bullets n'ont pas de 'id' donc on fait selon le titre
-              // => la pp 'title' appliquée ici pour correspondre à celle dans la key (L.35) de l'img affichée
+              // => la pp 'title' appliquée ici pour correspondre 
+              // à celle dans la key (L.35) de l'img affichée
               key={`${_.title}`}
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
-              // checked={idx === radioIdx} correction idx => index q correspond celui de useState(0) L9
+              // checked={idx === radioIdx} correction idx => index q correspond celui de useState(0)
               // => indique sur quelle img on se trouver
               readOnly
             // "console error : Warning: You provided a `checked` prop to a form field without an `onChange` handler."

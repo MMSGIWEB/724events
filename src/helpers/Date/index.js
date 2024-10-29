@@ -12,6 +12,8 @@ export const MONTHS = {
   11: "novembre",
   12: "décembre",
 };
+// associe le nom FR du mois au nb
+
 
 // ancien : export const getMonth = (date) => MONTHS[date.getMonth()];
 // Ajout +1 pour passer au mois suivant le [0] car tableau commence à [0]
