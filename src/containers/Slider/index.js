@@ -58,8 +58,9 @@ const Slider = () => {
               type="radio"
               name="radio-button"
               checked={index === radioIdx}
-              // checked={idx === radioIdx} correction idx => index q correspond celui de useState(0)
-              // => indique sur quelle img on se trouver
+              // ancien : checked={idx === radioIdx} 
+              // correction idx => index correspond au useState(0) L.9
+              // + indique sur quelle img on se trouve
               readOnly
             // "console error : Warning: You provided a `checked` prop to a form field without an `onChange` handler."
             // Cela affichera un champ en lecture seule. Si le champ doit être modifiable, utiliser defaultChecked. Sinon, utiliser onChange ou readOnly.
