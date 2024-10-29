@@ -16,6 +16,7 @@ const Slider = () => {
   // ajout de const avec la longueur du tb (inspiré de la méthode ligne 10)
   // une fois arrivé au dernier on repasse à la première (pas d'img blanche)
   const dataLength = data?.focus.length
+  //  permet de passer à la prochaine carte en augmentant l'index de 1
   const nextCard = () => {
     setTimeout(
       // ancien () => setIndex(index < byDateDesc.length ? index + 1 : 0),
