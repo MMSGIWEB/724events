@@ -16,7 +16,7 @@ const EventList = () => {
   const filteredEvents = (
     {/* ici, si le type est bien défini on affiche tous les évènements 
       sinon [la solution] on filtre par type
-      puis on conserve les evt ayant les v spécifiées par la pagina°*/}
+      puis on conserve les evt ayant les v spécifiées par la pagina° */}
       (!type
         ? data?.events
         // méthode '.filter' manquante donc on l'ajoute dans la 2ème alternative
