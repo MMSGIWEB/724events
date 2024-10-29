@@ -16,8 +16,8 @@ const Slider = () => {
   //  permet de passer à la prochaine carte en augmentant l'index de 1
   const nextCard = () => {
     setTimeout(
-      // ancien () => setIndex(index < byDateDesc.length ? index + 1 : 0),
       // Ajout de -1 après "length" => limite la longueur du useState (0,1,2)
+      // ancien () => setIndex(index < byDateDesc.length ? index + 1 : 0),
       () => setIndex(index < dataLength - 1 ? index + 1 : 0),
       5000
     );
@@ -50,9 +50,10 @@ const Slider = () => {
           {byDateDesc?.map((_, radioIdx) => (
             <input
               // ajout de '_' pour correspondre au 1er param
-              // ancien : key={`${event.id}`} -- les bullets n'ont pas de 'id' donc on fait selon le titre
               // => la pp 'title' appliquée ici pour correspondre 
               // à celle dans la key (L.35) de l'img affichée
+              // ancien : key={`${event.id}`}
+              // => les bullets n'ont pas de 'id' donc on fait en fonction du titre
               key={`${_.title}`}
               type="radio"
               name="radio-button"
