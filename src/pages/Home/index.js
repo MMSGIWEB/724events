@@ -16,11 +16,11 @@ const Page = () => {
   // ancien : const { last } = useData()
   // récup des données avec le hook personnalisé
   const { data } = useData()
-  // stockage de l'événement le plus récent (le dernier événement) à partir des données récupérées
+  // ajout : stock de l'evt le + récent à partir des données récup
   const last = data?.events.sort((evtA, evtB) =>
     // on trie par ordre décroissant
     new Date(evtB.date) - new Date(evtA.date)
-    // on récup le 1er "[0]" vu qu'il est trié par ordre décroissant (evt le + récent)
+    // on récup le 1er "[0]" vu qu'il est trié par ordre décroissant (last evt)
   )[0]
   return <>
     <header>
@@ -128,9 +128,10 @@ const Page = () => {
     <footer className="row">
       <div className="col presta">
         <h3>Notre derniére prestation</h3>
-        {/* On ajoute "last" pour supprimer les erreurs "undefined" pour les sources de l'img + title + label de la console 
-            + avec l'opérateur "&&" pour vérifier si last existe et si c'est le cas
-            => on restitue conditionnellement le composant
+        {/* On ajoute "last" pour supprimer les erreurs "undefined"
+         pour les sources de l'img + title + label de la console 
+            + avec l'opérateur "&&" pour vérifier si last existe 
+            et si c'est le cas on restitue conditionnellement le composant
         */}
         {last && (
           <EventCard
