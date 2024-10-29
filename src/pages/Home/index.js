@@ -130,8 +130,8 @@ const Page = () => {
         <h3>Notre derniére prestation</h3>
         {/* On ajoute "last" pour supprimer les erreurs "undefined"
          pour les sources de l'img + title + label de la console 
-            + avec l'opérateur "&&" pour vérifier si last existe 
-            et si c'est le cas on restitue conditionnellement le composant
+            + avec l'opérateur "&&" pour vérifier si 'last' existe 
+            et si c'est le cas contenu de la condition sera exécuté
         */}
         {last && (
           <EventCard

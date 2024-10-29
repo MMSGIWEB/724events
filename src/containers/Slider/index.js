@@ -17,7 +17,7 @@ const Slider = () => {
   const nextCard = () => {
     setTimeout(
       // Ajout de -1 après "length" => limite la longueur du useState (0,1,2)
-      // ancien () => setIndex(index < byDateDesc.length ? index + 1 : 0),
+      // ancien : () => setIndex(index < byDateDesc.length ? index + 1 : 0),
       () => setIndex(index < dataLength - 1 ? index + 1 : 0),
       5000
     );
