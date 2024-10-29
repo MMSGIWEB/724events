@@ -8,10 +8,7 @@ const Slider = () => {
   const { data } = useData();
   const [index, setIndex] = useState(0);
   const byDateDesc = data?.focus.sort((evtA, evtB) =>
-    // ancien code : new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
-    // chgt à + grand que; v renvoyée echangées selon résultat
-    // du + ancien au plus récent
-    new Date(evtA.date) > new Date(evtB.date) ? 1 : -1
+    new Date(evtA.date) < new Date(evtB.date) ? -1 : 1
   );
   // ajout de const avec la longueur du tb (inspiré de la méthode ligne 10)
   // une fois arrivé au dernier on repasse à la première (pas d'img blanche)
