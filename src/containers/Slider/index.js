@@ -51,7 +51,7 @@ const Slider = () => {
             <input
               // ajout de '_' pour correspondre au 1er param
               // => la pp 'title' appliquée ici pour correspondre 
-              // à celle dans la key (L.35) de l'img affichée
+              // à celle dans la key (L.33) de l'img affichée
               // ancien : key={`${event.id}`}
               // => les bullets n'ont pas de 'id' donc on fait en fonction du titre
               key={`${_.title}`}
